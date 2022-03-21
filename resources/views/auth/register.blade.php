@@ -2,47 +2,72 @@
 
 @section('content')
 <div class="container">
-    <div class="row">
-      <div class="mx-auto col col-12 col-sm-11 col-md-9 col-lg-7 col-xl-6">
-        <h1 class="text-center"><a class="text-dark" href="/">degimanu</a></h1>
-        <div class="card mt-3">
-          <div class="card-body text-center">
-            <h2 class="h3 card-title text-center mt-2">ユーザー登録</h2>
-            
-            @include('_error_card_list')
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <h3 class="mt-3 mb-3">新規会員登録</h3>
 
-            <div class="card-text">
-              {{--POST送信処理--}}
-              <form method="POST" action="{{ route('register') }}">
+            <hr>
+
+            <form method="POST" action="{{ route('register') }}">
                 @csrf
-                <div class="md-form">
-                  <label for="name">ユーザー名</label>
-                  <input class="form-control" type="text" id="name" name="name" required value="{{ old('name') }}">
-                  <small>英数字3〜16文字(登録後の変更はできません)</small>
+
+                <div class="form-group row">
+                    <label for="name" class="col-md-5 col-form-label text-md-left">氏名<span class="ml-1 samazon-require-input-label"><span class="samazon-require-input-label-text">必須</span></span></label>
+
+                    <div class="col-md-7">
+                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror samazon-login-input" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="侍 太郎">
+
+                        @error('name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>氏名を入力してください</strong>
+                        </span>
+                        @enderror
+                    </div>
                 </div>
-                <div class="md-form">
-                  <label for="email">メールアドレス</label>
-                  <input class="form-control" type="text" id="email" name="email" required value="{{ old('email') }}" >
+
+                <div class="form-group row">
+                    <label for="email" class="col-md-5 col-form-label text-md-left">メールアドレス<span class="ml-1 samazon-require-input-label"><span class="samazon-require-input-label-text">必須</span></span></label>
+
+                    <div class="col-md-7">
+                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror samazon-login-input" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="samurai@samurai.com">
+
+                        @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>メールアドレスを入力してください</strong>
+                        </span>
+                        @enderror
+                    </div>
                 </div>
-                <div class="md-form">
-                  <label for="password">パスワード</label>
-                  <input class="form-control" type="password" id="password" name="password" required>
+                
+                <div class="form-group row">
+                    <label for="password" class="col-md-5 col-form-label text-md-left">パスワード<span class="ml-1 samazon-require-input-label"><span class="samazon-require-input-label-text">必須</span></span></label>
+
+                    <div class="col-md-7">
+                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror samazon-login-input" name="password" required autocomplete="new-password">
+
+                        @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
                 </div>
-                <div class="md-form">
-                  <label for="password_confirmation">パスワード(確認)</label>
-                  <input class="form-control" type="password" id="password_confirmation" name="password_confirmation" required>
+
+                <div class="form-group row">
+                    <label for="password-confirm" class="col-md-5 col-form-label text-md-left"></label>
+
+                    <div class="col-md-7">
+                        <input id="password-confirm" type="password" class="form-control samazon-login-input" name="password_confirmation" required autocomplete="new-password">
+                    </div>
                 </div>
-                <button class="btn btn-block blue-gradient mt-2 mb-2" type="submit">ユーザー登録</button>
-              </form>
-              {{--POST送信処理--}}
-              <div class="mt-0">
-                <a href="{{ route('login') }}" class="card-text">ログインはこちら</a>
-              </div>
-              
-            </div>
-          </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn samazon-submit-button w-100">
+                        アカウント作成
+                    </button>
+                </div>
+            </form>
         </div>
-      </div>
     </div>
-  </div>
+</div>
 @endsection

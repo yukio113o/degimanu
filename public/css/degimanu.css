@@ -1,3 +1,97 @@
+@font-face {
+  font-family: YuGo;
+  src: local(YuGo-Medium),
+    url(/path/to/YuGo-Medium.woff2) format("woff2"),
+    url(/path/to/YuGo-Medium.woff) format("woff"),
+    url(/path/to/YuGo-Medium.ttf) format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: YuGo;
+  src: local(YuGo-Bold),
+    url(/path/to/YuGo-Bold.woff2) format("woff2"),
+    url(/path/to/YuGo-Bold.woff) format("woff"),
+    url(/path/to/YuGo-Bold.ttf) format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+h1 {
+  font-family: YuGo;
+  font-size: 26px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.13px;
+}
+
+h2 {
+  font-family: YuGo;
+  font-size: 22px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+h3 {
+  font-family: YuGo;
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.04px;
+}
+
+big {
+  font-family: YuGo;
+  font-size: 16px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.08px;
+}
+
+body {
+  font-family: YuGo;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.11px;
+}
+
+caption {
+  font-family: YuGo;
+  font-size: 12px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.08px;
+}
+
+label {
+  font-family: YuGo;
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #191919;
+}
+
+
 .samazon-login-input {
     border-radius: 2px;
     border: solid 1px #b2b2b2;
@@ -55,3 +149,27 @@
     color: #0fbe9f;
 }
 
+.samazon-header-container {
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
+.samazon-header-search-input {
+    border: solid 1px #e5e5e5;
+}
+
+.samazon-header-search-button {
+    background-color: #0fbe9f;
+}
+
+.samazon-header-search-icon {
+    color: #ffffff;
+}
+
+.samazon-header-fav-icon {
+    color: #191919;
+}
+
+.samazon-header-shoppingcart-icon {
+    color: #ffffff;
+}
