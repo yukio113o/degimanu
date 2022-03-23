@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'ProductController@index');
 
 Route::post('products/{product}/reviews', 'ReviewController@store');
 Route::get('products/{product}/favorite', 'ProductController@favorite')->name('product.favorite');
