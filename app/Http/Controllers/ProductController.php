@@ -16,18 +16,34 @@ class ProductController extends Controller
      */
     public function index(Request $request)
     {
+        $sort_query = [];
+        $sorted = "";
+        if ($request->sort !== null) {
+            $slices = explode(' ', $request->sort);
+            $sort_query[$slices[0]] = $slices[1];
+            $sorted = $request->sort;
+        }
+        
         if ($request->category !== null) {
-            $products = Product::where('category_id', $request->category)->paginate(15);
+            $products = Product::where('category_id', $request->category)->sortable($sort_query)->paginate(15);
             $total_count = Product::where('category_id', $request->category)->count();
             $category = Category::find($request->category);
         } else {
-            $products = Product::paginate(15);
+            $products = Product::sortable($sort_query)->paginate(15);
             $total_count = "";
             $category = null;
         }
+        
+        $sort = [
+             '並び替え' => '', 
+             '価格の安い順' => 'price asc',
+             '価格の高い順' => 'price desc' 
+         ];
+        
         $categories = Category::all();
         $major_category_names = Category::pluck('major_category_name')->unique();
-        return view('products.index', compact('products', 'category', 'categories', 'major_category_names', 'total_count'));
+        
+        return view('products.index', compact('products', 'category', 'categories', 'major_category_names', 'total_count', 'sort', 'sorted'));
     }
     
     public function favorite(Product $product)

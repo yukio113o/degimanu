@@ -11,6 +11,20 @@
             @if ($category !== null)
                 <a href="/">トップ</a> > <a href="#">{{ $category->major_category_name }}</a> > {{ $category->name }}
                 <h1>{{ $category->name }}の商品一覧{{$total_count}}件</h1>
+                
+                <form method="GET" action="{{ route('products.index')}}" class="form-inline">
+                     <input type="hidden" name="category" value="{{ $category->id }}">
+                     並び替え
+                     <select name="sort" onChange="this.form.submit();" class="form-inline ml-2">
+                         @foreach ($sort as $key => $value)
+                             @if ($sorted == $value)
+                                <option value=" {{ $value}}" selected>{{ $key }}</option>
+                             @else
+                                <option value=" {{ $value}}">{{ $key }}</option>
+                             @endif
+                         @endforeach
+                     </select>
+                 </form>
             @endif
         </div>
         <div class="container mt-4">
