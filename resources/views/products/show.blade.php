@@ -21,6 +21,7 @@
                 </p>
                 <hr>
             </div>
+            @auth
             <div class="col-5">
                 @if($product->isFavoritedBy(Auth::user()))
                 <a href="/products/{{ $product->id }}/favorite" class="btn samazon-favorite-button text-unfavorite w-100">
@@ -34,6 +35,7 @@
                 </a>
                 @endif
             </div>
+            @endauth
         </div>
 
         <div class="offset-1 col-11">
