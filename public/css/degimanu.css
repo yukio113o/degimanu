@@ -208,3 +208,25 @@ label {
   cursor: pointer;
   cursor: hand;
 }
+
+.dashboard-edit-link {
+  font-family: YuGo;
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #0fbe9f;
+}
+
+.dashboard-delete-link {
+  font-family: YuGo;
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #666666;
+}

@@ -3,7 +3,9 @@
     <div class="d-flex flex-column">
         <label class="samazon-sidebar-category-label">商品一覧</label>
         <label class="samazon-sidebar-category-label">親カテゴリ管理</label>
-        <label class="samazon-sidebar-category-label">カテゴリ管理</label>
+        <label class="samazon-sidebar-category-label">
+            <a href="/dashboard/categories">カテゴリ管理</a>
+        </label>
         <label class="samazon-sidebar-category-label">CSV一括登録</label>
     </div>
 

@@ -20,9 +20,6 @@
             <!-- Authentication Links -->
             @guest
             <li class="nav-item mr-5">
-                <a class="nav-link" href="{{ route('register') }}"><label>ユーザー登録</label></a>
-            </li>
-            <li class="nav-item mr-5">
                 <a class="nav-link" href="{{ route('login') }}"><label>ユーザーログイン</label></a>
             </li>
             <li class="nav-item mr-5">
