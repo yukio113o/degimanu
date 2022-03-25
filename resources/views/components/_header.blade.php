@@ -20,10 +20,13 @@
             <!-- Authentication Links -->
             @guest
             <li class="nav-item mr-5">
-                <a class="nav-link" href="{{ route('register') }}"><label>新規登録</label></a>
+                <a class="nav-link" href="{{ route('register') }}"><label>ユーザー登録</label></a>
             </li>
             <li class="nav-item mr-5">
-                <a class="nav-link" href="{{ route('login') }}"><label>ログイン</label></a>
+                <a class="nav-link" href="{{ route('login') }}"><label>ユーザーログイン</label></a>
+            </li>
+            <li class="nav-item mr-5">
+                <a class="nav-link" href="{{ route('dashboard.login') }}"><label>管理者ログイン</label></a>
             </li>
             @else
             <li class="nav-item mr-5">
