@@ -230,3 +230,15 @@ label {
   letter-spacing: normal;
   color: #666666;
 }
+
+.h-10 {
+  height: 10%!important;
+}
+
+.w-20 {
+  width: 20%!important;
+}
+
+.w-80 {
+  width: 80%!important;
+}
