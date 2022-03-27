@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Category;
+use App\MajorCategory;
 
 class CategoriesTableSeeder extends Seeder
 {
@@ -12,9 +13,7 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        $major_category_names = [
-            '銀のさら', '釜寅', 'すし上等'
-        ];
+        $major_category_names = MajorCategory::pluck('name', 'id');
         
         $silver_categories = [
             'A', 'B', 'F', 'C(ランチ)', 'お重', 'サイド', '仕込み'
@@ -28,13 +27,14 @@ class CategoriesTableSeeder extends Seeder
             'A', 'E', 'K', '丼', 'トッピング'
             ];
         
-        foreach ($major_category_names as $major_category_name) {
+        foreach ($major_categories as $major_category_name) {
             if ($major_category_name == '銀のさら') {
                 foreach ($silver_categories as $silver_category) {
                     Category::create([
                         'name' => $silver_category,
                         'description' => $silver_category,
-                        'major_category_name' => $major_category_name
+                        'major_category_name' => $major_category_name,
+                        'major_category_id' => $major_category_id
                     ]);
                 }
             }
@@ -44,7 +44,8 @@ class CategoriesTableSeeder extends Seeder
                     Category::create([
                         'name' => $kamatora_category,
                         'description' => $kamatora_category,
-                        'major_category_name' => $major_category_name
+                        'major_category_name' => $major_category_name,
+                        'major_category_id' => $major_category_id
                     ]);
                 }
             }
@@ -54,7 +55,8 @@ class CategoriesTableSeeder extends Seeder
                     Category::create([
                         'name' => $joto_category,
                         'description' => $joto_category,
-                        'major_category_name' => $major_category_name
+                        'major_category_name' => $major_category_name,
+                        'major_category_id' => $major_category_id
                     ]);
                 }
             }
