@@ -28,7 +28,7 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/dashboard', 'DashboardController@index')->middleware('auth:admins');
+Route::get('/dashboard', 'DashboardController@index')->middleware('auth:admins')->name('dashboard');
 
 Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.'], function () {
       Route::get('login', 'Dashboard\Auth\LoginController@showLoginForm')->name('login');

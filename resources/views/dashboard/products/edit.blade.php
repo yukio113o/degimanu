@@ -40,17 +40,17 @@
             </select>
         </div>
         <div class="form-inline mt-4 mb-4 row">
-              <label class="col-2 d-flex justify-content-start">画像</label>
+            <label class="col-2 d-flex justify-content-start">画像</label>
               @if ($product->image !== null)
               <img src="{{ asset('storage/products/'.$product->image) }}" id="product-image-preview" class="img-fluid w-25">
               @else
               <img src="#" id="product-image-preview">
               @endif
-              <div class="d-flex flex-column ml-2">
-                  <label for="product-image" class="btn samazon-submit-button">画像を選択</label>
-                  <input type="file" name="image" id="product-image" onChange="handleImage(this.files)" style="display: none;">
-              </div>
-          </div>
+            <div class="d-flex flex-column ml-2">
+              <label for="product-image" class="btn samazon-submit-button">画像を選択</label>
+              <input type="file" name="image" id="product-image" onChange="handleImage(this.files)" style="display: none;">
+            </div>
+        </div>
         <div class="form-inline mt-4 mb-4 row">
             <label for="product-description" class="col-2 d-flex justify-content-start align-self-start">商品説明</label>
             <textarea name="description" id="product-description" class="form-control col-8" rows="10">{{ $product->description }}</textarea>

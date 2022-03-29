@@ -44,7 +44,24 @@ class ProductController extends Controller
         $categories = Category::all();
         $major_category_names = Category::pluck('major_category_name')->unique();
         
-        return view('products.index', compact('products', 'category', 'categories', 'major_category_names', 'total_count', 'sort', 'sorted'));
+        
+        $products = Product::paginate(20);
+        $search = $request->input('search');
+        $query = Product::query();
+
+        if ($search !== null) {
+            $spaceConversion = mb_convert_kana($search, 's');
+            $wordArraySearched = preg_split('/[\s,]+/', $spaceConversion, -1, PREG_SPLIT_NO_EMPTY);
+            foreach($wordArraySearched as $value) {
+                $query->where('name', 'like', '%'.$value.'%');
+            }
+            $products = $query->paginate(20);
+        }
+        
+        return view('products.index', compact('products', 'category', 'categories', 'major_category_names', 'total_count', 'sort', 'sorted'))->with([
+                'products' => $products,
+                'search' => $search,
+            ]);
     }
     
     public function favorite(Product $product)

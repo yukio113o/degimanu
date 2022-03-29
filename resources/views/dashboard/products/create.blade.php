@@ -35,15 +35,19 @@
             </select>
         </div>
         <div class="form-inline mt-4 mb-4 row">
-            <label for="product-image" class="col-2 d-flex justify-content-start">画像</label>
-            <img src="#" id="product-image-preview">
-            <input type="file" name="image" id="product-image">
+            <label class="col-2 d-flex justify-content-start">画像</label>
+            <img src="#" id="product-image-preview" id="product-image-preview" class="img-fluid w-25">
+            <div class="d-flex flex-column ml-2">
+                <label for="product-image" class="btn samazon-submit-button">画像を選択</label>
+                <input type="file" name="image" id="product-image" onChange="handleImage(this.files)" style="display: none;" >
+            </div>
         </div>
         <div class="form-inline mt-4 mb-4 row">
             <label for="product-description" class="col-2 d-flex justify-content-start align-self-start">商品説明</label>
             <textarea name="description" id="product-description" class="form-control col-8" rows="10"></textarea>
         </div>
         <div class="d-flex justify-content-end">
+            {{ csrf_field() }}
             <button type="submit" class="w-25 btn samazon-submit-button">商品を登録</button>
         </div>
     </form>
@@ -54,14 +58,14 @@
 </div>
 
 <script type="text/javascript">
-      $("#product-image").change(function() {
-          if (this.files && this.files[0]) {
-              let reader = new FileReader();
-              reader.onload = function(e) {
-                  $("#product-image-preview").attr("src", e.target.result);
-              }
-              reader.readAsDataURL(this.files[0]);
+      function handleImage(image) {
+          let reader = new FileReader();
+          reader.onload = function() {
+              let imagePreview = document.getElementById("product-image-preview");
+              imagePreview.src = reader.result;
           }
-      });
- </script>
+          console.log(image);
+          reader.readAsDataURL(image[0]);
+      }
+  </script>
 @endsection 

@@ -10,12 +10,14 @@
         <label class="samazon-sidebar-category-label">
             <a href="/dashboard/categories">カテゴリ管理</a>
         </label>
-        <label class="samazon-sidebar-category-label">CSV一括登録</label>
-    </div>
+        <div class="d-flex align-items-center">
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        ログアウト
+                    </a>
 
-    <h2>その他</h2>
-    <div class="d-flex flex-column">
-        <label class="samazon-sidebar-category-label">新着情報管理</label>
-        <label class="samazon-sidebar-category-label">管理ユーザー管理</label>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </div>
     </div>
 </div>
