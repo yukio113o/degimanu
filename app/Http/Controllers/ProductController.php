@@ -45,7 +45,7 @@ class ProductController extends Controller
         $major_category_names = Category::pluck('major_category_name')->unique();
         
         
-        $products = Product::paginate(20);
+        $search_products = Product::paginate(20);
         $search = $request->input('search');
         $query = Product::query();
 
@@ -58,10 +58,7 @@ class ProductController extends Controller
             $products = $query->paginate(20);
         }
         
-        return view('products.index', compact('products', 'category', 'categories', 'major_category_names', 'total_count', 'sort', 'sorted'))->with([
-                'products' => $products,
-                'search' => $search,
-            ]);
+        return view('products.index', compact('products', 'category', 'categories', 'major_category_names', 'total_count', 'sort', 'sorted'));
     }
     
     public function favorite(Product $product)

@@ -50,11 +50,11 @@
                     <a href="/dashboard/categories/{{ $category->id }}/edit" class="dashboard-edit-link">編集</a>
                 </td>
                 <td>
-                    <a href="/dashboard/categories/{{ $category->id }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="dashboard-delete-link">
+                    <a href="/dashboard/categories/{{ $category->id }}" onclick="event.preventDefault(); document.getElementById('logout-form{{ $category->id }}').submit();" class="dashboard-delete-link">
                         削除
                     </a>
 
-                    <form id="logout-form" action="/dashboard/categories/{{ $category->id }}" method="POST" style="display: none;">
+                    <form id="logout-form{{ $category->id }}" action="/dashboard/categories/{{ $category->id }}" method="POST" style="display: none;">
                         @csrf
                         <input type="hidden" name="_method" value="DELETE">
                     </form>
