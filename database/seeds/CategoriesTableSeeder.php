@@ -27,14 +27,14 @@ class CategoriesTableSeeder extends Seeder
             'A', 'E', 'K', '丼', 'トッピング'
             ];
         
-        foreach ($major_categories as $major_category_name) {
+        foreach ($major_category_names as $major_category_name) {
             if ($major_category_name == '銀のさら') {
                 foreach ($silver_categories as $silver_category) {
                     Category::create([
                         'name' => $silver_category,
                         'description' => $silver_category,
                         'major_category_name' => $major_category_name,
-                        'major_category_id' => $major_category_id
+                        //'major_category_id' => $major_category_id
                     ]);
                 }
             }
@@ -45,7 +45,7 @@ class CategoriesTableSeeder extends Seeder
                         'name' => $kamatora_category,
                         'description' => $kamatora_category,
                         'major_category_name' => $major_category_name,
-                        'major_category_id' => $major_category_id
+                        //'major_category_id' => $major_category_id
                     ]);
                 }
             }
@@ -56,7 +56,7 @@ class CategoriesTableSeeder extends Seeder
                         'name' => $joto_category,
                         'description' => $joto_category,
                         'major_category_name' => $major_category_name,
-                        'major_category_id' => $major_category_id
+                        //'major_category_id' => $major_category_id
                     ]);
                 }
             }
