@@ -48,7 +48,7 @@
                      <form method="POST" action="/products/{{ $product->id }}/reviews">
                          {{ csrf_field() }}
                          <textarea name="content" class="form-control m-2"></textarea>
-                         <button type="submit" class="btn samazon-submit-button ml-2">コメントを追加</button>
+                         <button type="submit" class="btn submit-button ml-2">コメントを追加</button>
                      </form>
                  </div>
              </div>

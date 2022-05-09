@@ -24,14 +24,14 @@
                 </div>
                 <textarea id="search-products" name="keyword" class="form-controll ml-2 w-50">{{$keyword}}</textarea>
             </div>
-            <button type="submit" class="btn samazon-submit-button">検索</button>
+            <button type="submit" class="btn submit-button">検索</button>
         </form>
     </div>
 
     <div class="d-flex justify-content-between w-75 mt-4">
         <h3>合計{{$total_count}}件</h3>
 
-        <a href="{{ route('dashboard.products.create') }}" class="btn samazon-submit-button">+ 新規作成</a>
+        <a href="{{ route('dashboard.products.create') }}" class="btn submit-button">+ 新規作成</a>
     </div>
     <div class="table-responsive">
         <table class="table fixed-table mt-5">

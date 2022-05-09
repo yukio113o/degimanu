@@ -29,7 +29,7 @@
                 @endforeach
             </select>
         </div>
-        <button type="submit" class="btn samazon-submit-button">＋新規作成</button>
+        <button type="submit" class="btn submit-button">＋新規作成</button>
     </form>
 
     <table class="table mt-5">

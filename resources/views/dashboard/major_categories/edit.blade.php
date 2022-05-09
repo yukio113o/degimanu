@@ -24,7 +24,7 @@
             <label for="major-category-description">カテゴリの説明</label>
             <textarea name="description" id="major-category-description" class="form-control">{{ $major_category->description }}</textarea>
         </div>
-        <button type="submit" class="btn samazon-submit-button">更新</button>
+        <button type="submit" class="btn submit-button">更新</button>
     </form>
 
     <a href="/dashboard/major_categories">カテゴリ一覧に戻る</a>

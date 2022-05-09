@@ -92,13 +92,13 @@ label {
 }
 
 
-.samazon-login-input {
+.login-input {
     border-radius: 2px;
     border: solid 1px #b2b2b2;
     background-color: #ffffff;
 }
 
-.samazon-check-label {
+.check-label {
     font-family: YuGo;
     font-size: 12px;
     font-weight: 500;
@@ -109,12 +109,12 @@ label {
     color: #000000;
 }
 
-.samazon-require-input-label {
+.require-input-label {
     border-radius: 1px;
     background-color: #e2001b;
 }
 
-.samazon-require-input-label-text {
+.require-input-label-text {
     font-family: YuGo;
     font-size: 14px;
     font-weight: 500;
@@ -125,7 +125,7 @@ label {
     color: #ffffff;
 }
 
-.samazon-submit-button {
+.submit-button {
     font-family: YuGo;
     font-size: 14px;
     font-weight: bold;
@@ -138,7 +138,7 @@ label {
     background-color: #0fbe9f;
 }
 
-.samazon-login-text {
+.login-text {
     font-family: YuGo;
     font-size: 14px;
     font-weight: bold;
@@ -149,49 +149,24 @@ label {
     color: #0fbe9f;
 }
 
-.samazon-header-container {
+.header-container {
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
 }
 
-.samazon-header-search-input {
+.header-search-input {
     border: solid 1px #e5e5e5;
 }
 
-.samazon-header-search-button {
+.header-search-button {
     background-color: #0fbe9f;
 }
 
-.samazon-header-search-icon {
+.header-search-icon {
     color: #ffffff;
 }
 
-.samazon-header-fav-icon {
-    color: #191919;
-}
-
-.samazon-header-shoppingcart-icon {
-    color: #ffffff;
-}
-
-.samazon-favorite-button {
-    border-radius: 2px;
-    border: solid 1px #0fbe9f;
-    background-color: #ffffff;
-}
-
-.text-favorite {
-    color: #0fbe9f;
-}
-
-.text-unfavorite {
-    border-radius: 2px;
-    border: solid 1px #0fbe9f;
-    background-color: #0fbe9f;
-    color: #ffffff;
-}
-
-.samazon-sidebar-category-label {
+.sidebar-category-label {
     width: 156px;
     height: 20px;
     font-family: YuGo;

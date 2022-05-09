@@ -38,7 +38,7 @@
             <label class="col-2 d-flex justify-content-start">画像</label>
             <img src="#" id="product-image-preview" id="product-image-preview" class="img-fluid w-25">
             <div class="d-flex flex-column ml-2">
-                <label for="product-image" class="btn samazon-submit-button">画像を選択</label>
+                <label for="product-image" class="btn submit-button">画像を選択</label>
                 <input type="file" name="image" id="product-image" onChange="handleImage(this.files)" style="display: none;" >
             </div>
         </div>
@@ -48,7 +48,7 @@
         </div>
         <div class="d-flex justify-content-end">
             {{ csrf_field() }}
-            <button type="submit" class="w-25 btn samazon-submit-button">商品を登録</button>
+            <button type="submit" class="w-25 btn submit-button">商品を登録</button>
         </div>
     </form>
 

@@ -17,18 +17,18 @@
                 <input type="hidden" name="_method" value="PUT">
                 <div class="form-group">
                     <div class="d-flex justify-content-between">
-                        <label for="name" class="text-md-left samazon-edit-user-info-label">氏名</label>
+                        <label for="name" class="text-md-left edit-user-info-label">氏名</label>
                         <span onclick="switchEditUserInfo('.userName', '.editUserName', '.userNameEditLabel');" class="userNameEditLabel user-edit-label">
                             編集
                         </span>
                     </div>
                     <div class="collapse show userName">
-                        <h1 class="samazon-edit-user-info-value">{{ $user->name }}</h1>
+                        <h1 class="edit-user-info-value">{{ $user->name }}</h1>
                     </div>
                     <div class="collapse editUserName">
-                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $user->name }}" required autocomplete="name" autofocus placeholder="侍 太郎">
+                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $user->name }}" required autocomplete="name" autofocus placeholder="氏名">
 
-                        <button type="submit" class="btn samazon-submit-button mt-3 w-25">
+                        <button type="submit" class="btn submit-button mt-3 w-25">
                             保存
                         </button>
 
@@ -44,18 +44,18 @@
 
                 <div class="form-group">
                     <div class="d-flex justify-content-between">
-                        <label for="email" class="text-md-left samazon-edit-user-info-label">メールアドレス</label>
+                        <label for="email" class="text-md-left edit-user-info-label">メールアドレス</label>
                         <span onclick="switchEditUserInfo('.userMail', '.editUserMail', '.userMailEditLabel');" class="userMailEditLabel user-edit-label">
                             編集
                         </span>
                     </div>
                     <div class="collapse show userMail">
-                        <h1 class="samazon-edit-user-info-value">{{ $user->email }}</h1>
+                        <h1 class="edit-user-info-value">{{ $user->email }}</h1>
                     </div>
                     <div class="collapse editUserMail">
-                        <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $user->email }}" required autocomplete="email" autofocus placeholder="samurai@samurai.com">
+                        <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $user->email }}" required autocomplete="email" autofocus placeholder="sample@sample.com">
 
-                        <button type="submit" class="btn samazon-submit-button mt-3 w-25">
+                        <button type="submit" class="btn submit-button mt-3 w-25">
                             保存
                         </button>
 

@@ -1,11 +1,11 @@
-<nav class="navbar navbar-expand-md navbar-light shadow-sm samazon-header-container">
+<nav class="navbar navbar-expand-md navbar-light shadow-sm header-container">
     <a class="navbar-brand" href="{{ url('/') }}">
         {{ config('app.name', 'DegiManu') }}
     </a>
     <form class="form-inline" method="GET" action="{{ route('products.index') }}">
-        <input class="form-control samazon-header-search-input" type="search" name="search" value="@if (isset($search)) {{ $search }} @endif">
+        <input class="form-control header-search-input" type="search" name="search" value="@if (isset($search)) {{ $search }} @endif">
         <div class="input-group">
-            <button type="submit" class="btn samazon-header-search-button"><i class="fas fa-search samazon-header-search-icon"></i></button>
+            <button type="submit" class="btn header-search-button"><i class="fas fa-search header-search-icon"></i></button>
         </div>
     </form>
 

@@ -47,7 +47,7 @@
               <img src="#" id="product-image-preview">
               @endif
             <div class="d-flex flex-column ml-2">
-              <label for="product-image" class="btn samazon-submit-button">画像を選択</label>
+              <label for="product-image" class="btn submit-button">画像を選択</label>
               <input type="file" name="image" id="product-image" onChange="handleImage(this.files)" style="display: none;">
             </div>
         </div>
@@ -56,7 +56,7 @@
             <textarea name="description" id="product-description" class="form-control col-8" rows="10">{{ $product->description }}</textarea>
         </div>
         <div class="d-flex justify-content-end">
-            <button type="submit" class="w-25 btn samazon-submit-button">更新</button>
+            <button type="submit" class="w-25 btn submit-button">更新</button>
         </div>
     </form>
 

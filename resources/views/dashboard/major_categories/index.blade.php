@@ -22,7 +22,7 @@
             <label for="major-category-description">親カテゴリの説明</label>
             <textarea name="description" id="major-category-description" class="form-control"></textarea>
         </div>
-        <button type="submit" class="btn samazon-submit-button">＋新規作成</button>
+        <button type="submit" class="btn submit-button">＋新規作成</button>
     </form>
 
     <table class="table mt-5">

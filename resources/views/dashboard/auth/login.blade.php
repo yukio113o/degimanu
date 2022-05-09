@@ -18,7 +18,7 @@
                 @csrf
 
                 <div class="form-group">
-                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror samazon-login-input" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="メールアドレス">
+                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror login-input" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="メールアドレス">
 
                     @error('email')
                     <span class="invalid-feedback" role="alert">
@@ -28,7 +28,7 @@
                 </div>
 
                 <div class="form-group">
-                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror samazon-login-input" name="password" required autocomplete="current-password" placeholder="パスワード">
+                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror login-input" name="password" required autocomplete="current-password" placeholder="パスワード">
 
                     @error('password')
                     <span class="invalid-feedback" role="alert">
@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="form-group">
-                    <button type="submit" class="mt-3 btn samazon-submit-button w-100">
+                    <button type="submit" class="mt-3 btn submit-button w-100">
                         ログイン
                     </button>
                 </div>
