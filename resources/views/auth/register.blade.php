@@ -12,10 +12,10 @@
                 @csrf
 
                 <div class="form-group row">
-                    <label for="name" class="col-md-5 col-form-label text-md-left">氏名<span class="ml-1 samazon-require-input-label"><span class="samazon-require-input-label-text">必須</span></span></label>
+                    <label for="name" class="col-md-5 col-form-label text-md-left">氏名<span class="ml-1 degimanu-require-input-label"><span class="degimanu-require-input-label-text">必須</span></span></label>
 
                     <div class="col-md-7">
-                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror samazon-login-input" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="氏名">
+                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror degimanu-login-input" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="氏名">
 
                         @error('name')
                         <span class="invalid-feedback" role="alert">
@@ -26,10 +26,10 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="email" class="col-md-5 col-form-label text-md-left">メールアドレス<span class="ml-1 samazon-require-input-label"><span class="samazon-require-input-label-text">必須</span></span></label>
+                    <label for="email" class="col-md-5 col-form-label text-md-left">メールアドレス<span class="ml-1 degimanu-require-input-label"><span class="degimanu-require-input-label-text">必須</span></span></label>
 
                     <div class="col-md-7">
-                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror samazon-login-input" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="exmaple@example.com">
+                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror degimanu-login-input" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="exmaple@example.com">
 
                         @error('email')
                         <span class="invalid-feedback" role="alert">
@@ -40,10 +40,10 @@
                 </div>
                 
                 <div class="form-group row">
-                    <label for="password" class="col-md-5 col-form-label text-md-left">パスワード<span class="ml-1 samazon-require-input-label"><span class="samazon-require-input-label-text">必須</span></span></label>
+                    <label for="password" class="col-md-5 col-form-label text-md-left">パスワード<span class="ml-1 degimanu-require-input-label"><span class="degimanu-require-input-label-text">必須</span></span></label>
 
                     <div class="col-md-7">
-                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror samazon-login-input" name="password" required autocomplete="new-password">
+                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror degimanu-login-input" name="password" required autocomplete="new-password">
 
                         @error('password')
                         <span class="invalid-feedback" role="alert">
@@ -57,12 +57,12 @@
                     <label for="password-confirm" class="col-md-5 col-form-label text-md-left"></label>
 
                     <div class="col-md-7">
-                        <input id="password-confirm" type="password" class="form-control samazon-login-input" name="password_confirmation" required autocomplete="new-password">
+                        <input id="password-confirm" type="password" class="form-control degimanu-login-input" name="password_confirmation" required autocomplete="new-password">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <button type="submit" class="btn samazon-submit-button w-100">
+                    <button type="submit" class="btn degimanu-submit-button w-100">
                         アカウント作成
                     </button>
                 </div>
