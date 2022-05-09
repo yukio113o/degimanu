@@ -33,7 +33,7 @@
                 <div class="col-3">
                     <a href="{{route('products.show', $product)}}">
                         @if ($product->image !== "")
-                        <img src="{{ asset('storage/products/'.$product->image) }}" class="img-thumbnail">
+                        <img src="{{ Storage::disk('s3')->url($product->image) }}" class="img-thumbnail">
                         @else
                         <img src="{{ asset('img/dummy.png')}}" class="img-thumbnail">
                         @endif

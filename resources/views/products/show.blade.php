@@ -6,7 +6,7 @@
     <div class="row w-75">
         <div class="col-5 offset-1">
             @if ($product->image !== null)
-            <img src="{{ asset('storage/products/'.$product->image) }}" class="w-100 img-fluid">
+            <img src="{{ Storage::disk('s3')->url($product->image) }}" class="w-100 img-fluid">
             @else
             <img src="{{ asset('img/dummy.png')}}" class="w-100 img-fuild">
             @endif

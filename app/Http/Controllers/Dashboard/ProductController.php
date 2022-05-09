@@ -82,8 +82,7 @@ class ProductController extends Controller
         $product->category_id = $request->input('category_id');
         
         if ($request->file('image') !== null) {
-            $image = $request->file('image')->store('public/products');
-            $product->image = basename($image);
+            $product->image = Storage::disk('s3')->putFile('public/products', $request->file('image'), 'public');
         } else {
             $product->image = '';
         }
@@ -145,10 +144,9 @@ class ProductController extends Controller
         $product->category_id = $request->input('category_id');
         
         if ($request->hasFile('image')) {
-            $image = $request->file('image')->store('public/products');
-            $product->image = basename('$image');
+            $product->image = Storage::disk('s3')->putFile('public/products', $request->file('image'), 'public');
         } else if(isset($product->image)) {
-            // do nothing
+            
         } else {
             $product->image = '';
         }

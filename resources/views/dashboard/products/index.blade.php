@@ -54,7 +54,7 @@
                     <th scope="row">{{ $product->id }}</td>
                     <td>
                     @if ($product->image !== "")
-                    <img src="{{ asset('storage/products/'.$product->image) }}" class="w-80 img-fluid">
+                    <img src="{{ Storage::disk('s3')->url($product->image) }}" class="w-80 img-fluid">
                     @else
                     <img src="{{ asset('img/dummy.png')}}" class="w-80 img-fuild">
                     @endif
