@@ -13,7 +13,9 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        $major_category_names = MajorCategory::pluck('name', 'id');
+        $major_category_names = [
+            '銀のさら', '釜寅', 'すし上等'
+        ];
         
         $silver_categories = [
             'A', 'B', 'F', 'C(ランチ)', 'お重', 'サイド', '仕込み'
