@@ -17,7 +17,7 @@
                     {{$product->name}}
                 </h1>
                 <p class="d-flex">
-                    {{$product->description}}
+                    {{!! nl2br(htmlspecialchars($product->description)) !!}}
                 </p>
                 <hr>
                 <p class="d-flex align-items-end">
