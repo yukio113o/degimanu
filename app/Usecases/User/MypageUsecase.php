@@ -3,18 +3,16 @@
 namespace App\Usecases\User;
 
 use App\Http\Controllers\Controller;
-use App\User;
-use App\Usecases\Payload as Payload;
+use App\Usecases\Payload;
 use Illuminate\Support\Facades\Auth;
 
 class MypageUsecase extends Controller
 {
 
     /**
-     * @param User $user
      * @return Payload
      */
-    public function run(User $user): Payload
+    public function run(): Payload
     {
         $payload = new Payload();
 

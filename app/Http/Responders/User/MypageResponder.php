@@ -8,7 +8,6 @@ use Symfony\Component\HttpFoundation\Response;
 
 class MypageResponder extends AbstractResponder
 {
-
     /**
      * @param mixed ...$args
      *
@@ -22,6 +21,6 @@ class MypageResponder extends AbstractResponder
 
         $user = $payload->getResult()['user'];
 
-        return view('users.mypage', compact('user'));
+        return $this->response->view('users.mypage', compact('user'));
     }
 }

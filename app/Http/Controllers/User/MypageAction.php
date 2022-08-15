@@ -3,42 +3,40 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
-use App\Http\Responders\Product\ShowResponder;
-use App\Product;
-use App\Usecases\Product\ShowUsecase;
+use App\Http\Responders\User\MypageResponder;
+use App\Usecases\User\MypageUsecase;
 use Symfony\Component\HttpFoundation\Response;
 
 class MypageAction extends Controller
 {
     /**
-     * @var ShowUsecase
+     * @var MypageUsecase
      */
     private $usecase;
 
     /**
-     * @var ShowResponder
+     * @var MypageResponder
      */
     private $responder;
 
     /**
-     * ShowAction constructor.
+     * MypageAction constructor.
      *
-     * @param ShowUsecase $usecase
-     * @param ShowResponder $responder
+     * @param MypageUsecase $usecase
+     * @param MypageResponder $responder
      */
-    public function __construct(ShowUsecase $usecase, ShowResponder $responder)
+    public function __construct(MypageUsecase $usecase, MypageResponder $responder)
     {
         $this->usecase = $usecase;
         $this->responder = $responder;
     }
 
     /**
-     * @param Product $user
      * @return Response
      * @throws \Exception
      */
-    public function __invoke(User $user): Response
+    public function __invoke(): Response
     {
-        return $this->responder->handle($this->usecase->run($user));
+        return $this->responder->handle($this->usecase->run());
     }
 }
