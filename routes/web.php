@@ -23,7 +23,10 @@ Route::put('users/mypage/password', 'UserController@update_password')->name('myp
 Route::post('products/{product}/reviews', 'ReviewController@store');
 Route::get('products/{product}/favorite', 'ProductController@favorite')->name('product.favorite');
 Route::get('products', 'ProductController@index')->name('products.index');
-Route::get('products/{product}', 'ProductController@show')->name('products.show');
+
+//Route::get('products/{product}', 'ProductController@show')->name('products.show');
+Route::get('products/{product}', 'Product\ShowAction')->name('products.show');
+
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
