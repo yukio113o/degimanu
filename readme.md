@@ -26,7 +26,7 @@ composer install
 php artisan key:generate
 ```
 
-6．composerインストール実行
+6. マイグレーション実行
 ```
 php artisan migrate
 ```
