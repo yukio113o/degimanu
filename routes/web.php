@@ -13,7 +13,8 @@
 
 Route::get('/', 'ProductController@index');
 
-Route::get('users/mypage', 'UserController@mypage')->name('mypage');
+//Route::get('users/mypage', 'UserController@mypage')->name('mypage');
+Route::get('users/mypage', 'User\MypageAction')->name('mypage');
 Route::get('users/mypage/edit', 'UserController@edit')->name('mypage.edit');
 Route::put('users/mypage', 'UserController@update')->name('mypage.update');
 Route::get('users/mypage/favorite', 'UserController@favorite')->name('mypage.favorite');
@@ -41,6 +42,6 @@ Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.'], function () {
       Route::resource('products', 'Dashboard\ProductController')->middleware('auth:admins');
   });
 
- if (env('APP_ENV') === 'local') {
-      URL::forceScheme('https');
-  }
+// if (env('APP_ENV') === 'local') {
+  //    URL::forceScheme('https');
+  //}
