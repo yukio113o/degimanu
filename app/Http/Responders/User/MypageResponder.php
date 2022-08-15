@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class MypageResponder extends AbstractResponder
 {
+
     /**
      * @param mixed ...$args
      *
