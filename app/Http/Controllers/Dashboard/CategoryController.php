@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Category;
+use App\Http\Requests\CategoryStoreRequest;
+use App\Http\Requests\CategoryUpdateRequest;
 use App\MajorCategory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Response;
 
 class CategoryController extends Controller
 {
@@ -18,7 +21,7 @@ class CategoryController extends Controller
     {
         $categories = Category::paginate(15);
         $major_categories = MajorCategory::all();
-        
+
         return view('dashboard.categories.index', compact('categories', 'major_categories'));
     }
 
@@ -27,42 +30,32 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         $category = new Category();
         $category->name = $request->input('name');
         $category->description = $request->input('description');
         $category->major_category_name = $request->input('major_category_name');
         $category->save();
-        
+
         return redirect("/dashboard/categories");
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param CategoryStoreRequest $request
+     * @return Response
      */
-    public function store(Request $request)
+    public function store(CategoryStoreRequest $request)
     {
-        $request->validate([
-            'name' => 'required|unique:categories',
-            'description' => 'required',
-        ],
-        [
-            'name.required' => 'カテゴリ名は必須です。',
-            'name.unique' => 'カテゴリ名「' . $request->input('name') . '」は登録済みです。',
-            'description.required' => 'カテゴリの説明は必須です。',
-        ]);
-        
         $category = new Category();
         $category->name = $request->input('name');
         $category->description = $request->input('description');
         $category->major_category_id = $request->input('major_category_id');
         $category->major_category_name = MajorCategory::find($request->input('major_category_id'))->name;
         $category->save();
-        
+
         return redirect("/dashboard/categories");
     }
 
@@ -92,28 +85,18 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param CategoryUpdateRequest $request
+     * @param Category $category
+     * @return Response
      */
-    public function update(Request $request, Category $category)
+    public function update(CategoryUpdateRequest $request, Category $category)
     {
-        $request->validate([
-            'name' => 'required|unique:categories',
-            'description' => 'required',
-        ],
-        [
-            'name.required' => 'カテゴリ名は必須です。',
-            'name.unique' => 'カテゴリ名「' . $request->input('name') . '」は登録済みです。',
-            'description.required' => 'カテゴリの説明は必須です。',
-        ]);
-        
         $category->name = $request->input('name');
         $category->description = $request->input('description');
         $category->major_category_id = $request->input('major_category_id');
         $category->major_category_name = MajorCategory::find($request->input('major_category_id'))->name;
         $category->update();
-        
+
         return redirect("/dashboard/categories");
      }
 
@@ -126,7 +109,7 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         $category->delete();
-        
+
         return redirect("/dashboard/categories");
     }
 }
