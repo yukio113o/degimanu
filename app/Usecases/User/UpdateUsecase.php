@@ -11,10 +11,11 @@ use Illuminate\Support\Facades\Auth;
 class UpdateUsecase extends Controller
 {
     /**
-     * @param \App\User  $user
+     * @param Request $request
+     * @param User $user
      * @return Payload
      */
-    public function run(Request  $request, User $user): Payload
+    public function run(Request $request, User $user): Payload
     {
         $payload = new Payload();
 
@@ -23,8 +24,6 @@ class UpdateUsecase extends Controller
         $user->email = $request->input('email') ? $request->input('email') : $user->email;
         $user->update();
 
-        return $payload->setResult([
-            'user' => $user
-        ]);
+        return $payload;
     }
 }

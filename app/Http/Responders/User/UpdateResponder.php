@@ -19,8 +19,6 @@ class UpdateResponder extends AbstractResponder
 
         assert($payload instanceof Payload);
 
-        $user = $payload->getResult()['user'];
-
-        return $this->response->redirect()->route('users.edit', compact('user'));
+        return redirect()->route('mypage');
     }
 }

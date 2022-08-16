@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
-use App\Http\Responders\User\EditResponder;
+use App\Http\Responders\User\UpdateResponder;
 use App\User;
-use App\Usecases\User\EditUsecase;
+use App\Usecases\User\UpdateUsecase;
+use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class UpdateAction extends Controller
@@ -23,23 +24,23 @@ class UpdateAction extends Controller
     /**
      * UpdateAction constructor.
      *
-     * @param EditUsecase $usecase
-     * @param EditResponder $responder
+     * @param UpdateUsecase $usecase
+     * @param UpdateResponder $responder
      */
-    public function __construct(EditUsecase $usecase, EditResponder $responder)
+    public function __construct(UpdateUsecase $usecase, UpdateResponder $responder)
     {
         $this->usecase = $usecase;
         $this->responder = $responder;
     }
 
     /**
+     * @param Request $request
      * @param User $user
      * @return Response
-     * @throws \Exception
      */
-    public function __invoke(User $user): Response
+    public function __invoke(Request $request, User $user): Response
     {
-        return $this->responder->handle($this->usecase->run($user));
+        return $this->responder->handle($this->usecase->run($request, $user));
     }
 }
 
