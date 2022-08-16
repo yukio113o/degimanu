@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Http\Requests\MajorCatStoreRequest;
-use App\Http\Requests\MajorCatUpdateRequest;
+use App\Http\Requests\MajorCategoryStoreRequest;
+use App\Http\Requests\MajorCategoryUpdateRequest;
 use App\MajorCategory;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
@@ -35,10 +35,10 @@ class MajorCategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param MajorCatStoreRequest $request
+     * @param MajorCategoryStoreRequest $request
      * @return Response
      */
-    public function store(MajorCatStoreRequest $request): Response
+    public function store(MajorCategoryStoreRequest $request): Response
     {
         $major_category = new MajorCategory();
         $major_category->name = $request->input('name');
@@ -73,11 +73,11 @@ class MajorCategoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param MajorCatUpdateRequest $request
+     * @param MajorCategoryUpdateRequest $request
      * @param MajorCategory $majorCategory
      * @return Response
      */
-    public function update(MajorCatUpdateRequest $request, MajorCategory $majorCategory): Response
+    public function update(MajorCategoryUpdateRequest $request, MajorCategory $majorCategory): Response
     {
         $major_category = new MajorCategory();
         $major_category->name = $request->input('name');
