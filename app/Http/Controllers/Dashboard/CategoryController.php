@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Category;
-use App\Http\Requests\StoreRequest;
-use App\Http\Requests\UpdateRequest;
+use App\Http\Requests\CatStoreRequest;
+use App\Http\Requests\CatUpdateRequest;
 use App\MajorCategory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -44,10 +44,10 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param StoreRequest $request
+     * @param CatStoreRequest $request
      * @return Response
      */
-    public function store(StoreRequest $request)
+    public function store(CatStoreRequest $request)
     {
         $category = new Category();
         $category->name = $request->input('name');
@@ -85,11 +85,11 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param UpdateRequest $request
+     * @param CatUpdateRequest $request
      * @param Category $category
      * @return Response
      */
-    public function update(UpdateRequest $request, Category $category)
+    public function update(CatUpdateRequest $request, Category $category)
     {
         $category->name = $request->input('name');
         $category->description = $request->input('description');

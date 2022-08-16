@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreRequest extends FormRequest
+class CatUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -37,5 +37,4 @@ class StoreRequest extends FormRequest
             'description.required' => 'カテゴリの説明は必須です。',
         ];
     }
-
 }
