@@ -13,14 +13,9 @@
 
 Route::get('/', 'ProductController@index');
 
-//Route::get('users/mypage', 'UserController@mypage')->name('mypage');
-Route::get('users/mypage', User\MypageAction::class)->name('mypage');
-
-//Route::get('users/mypage/edit', 'UserController@edit')->name('mypage.edit');
+Route::get('users/mypage', 'User\MypageAction')->name('mypage');
 Route::get('users/mypage/edit', 'User\EditAction')->name('mypage.edit');
-
-//Route::put('users/mypage', 'UserController@update')->name('mypage.update');
-Route::put('users/mypage', User\UpdateAction::class)->name('mypage.update');
+Route::put('users/mypage', 'User\UpdateAction')->name('mypage.update');
 
 Route::get('users/mypage/favorite', 'UserController@favorite')->name('mypage.favorite');
 Route::get('users/mypage/password/edit', 'UserController@edit_password')->name('mypage.edit_password');
@@ -30,7 +25,6 @@ Route::post('products/{product}/reviews', 'ReviewController@store');
 Route::get('products/{product}/favorite', 'ProductController@favorite')->name('product.favorite');
 Route::get('products', 'ProductController@index')->name('products.index');
 
-//Route::get('products/{product}', 'ProductController@show')->name('products.show');
 Route::get('products/{product}', 'Product\ShowAction')->name('products.show');
 
 Auth::routes(['verify' => true]);
