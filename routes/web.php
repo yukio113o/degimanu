@@ -47,6 +47,6 @@ Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.'], function () {
       Route::resource('products', 'Dashboard\ProductController')->middleware('auth:admins');
   });
 
-// if (env('APP_ENV') === 'local') {
-  //    URL::forceScheme('https');
-  //}
+ //if (env('APP_ENV') === 'local') {
+ //     URL::forceScheme('https');
+ // }
