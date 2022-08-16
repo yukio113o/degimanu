@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Category;
-use App\Http\Requests\ValidRequest;
+use App\Http\Requests\StoreRequest;
+use App\Http\Requests\UpdateRequest;
 use App\MajorCategory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -43,21 +44,11 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param ValidRequest $request
+     * @param StoreRequest $request
      * @return Response
      */
-    public function store(ValidRequest $request)
+    public function store(StoreRequest $request)
     {
-        //$request->validate([
-        //    'name' => 'required|unique:categories',
-        //    'description' => 'required',
-        //],
-        //[
-        //    'name.required' => 'カテゴリ名は必須です。',
-        //    'name.unique' => 'カテゴリ名「' . $request->input('name') . '」は登録済みです。',
-        //    'description.required' => 'カテゴリの説明は必須です。',
-        //]);
-
         $category = new Category();
         $category->name = $request->input('name');
         $category->description = $request->input('description');
@@ -94,22 +85,12 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param UpdateRequest $request
+     * @param Category $category
+     * @return Response
      */
-    public function update(ValidRequest $request, Category $category)
+    public function update(UpdateRequest $request, Category $category)
     {
-        //$request->validate([
-        //    'name' => 'required|unique:categories',
-        //    'description' => 'required',
-        //],
-        //[
-        //    'name.required' => 'カテゴリ名は必須です。',
-        //    'name.unique' => 'カテゴリ名「' . $request->input('name') . '」は登録済みです。',
-        //    'description.required' => 'カテゴリの説明は必須です。',
-        ///]);
-
         $category->name = $request->input('name');
         $category->description = $request->input('description');
         $category->major_category_id = $request->input('major_category_id');

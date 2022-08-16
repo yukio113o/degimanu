@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Http\Requests\ValidRequest;
+use App\Http\Requests\StoreRequest;
+use App\Http\Requests\UpdateRequest;
 use App\MajorCategory;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
 
@@ -35,21 +35,11 @@ class MajorCategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param ValidRequest $request
+     * @param StoreRequest $request
      * @return Response
      */
-    public function store(ValidRequest $request): Response
+    public function store(StoreRequest $request): Response
     {
-        //$request->validate([
-        //    'name' => 'required|unique:major_categories',
-        //    'description' => 'required',
-        //],
-        //[
-        //    'name.required' => '親カテゴリ名は必須です。',
-        //    'name.unique' => '親カテゴリ名「' . $request->input('name') . '」は登録済みです。',
-        //    'description.required' => '親カテゴリ名の説明は必須です。',
-        //]);
-
         $major_category = new MajorCategory();
         $major_category->name = $request->input('name');
         $major_category->description = $request->input('description');
@@ -83,22 +73,12 @@ class MajorCategoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param ValidRequest $request
+     * @param UpdateRequest $request
      * @param MajorCategory $majorCategory
      * @return Response
      */
-    public function update(ValidRequest $request, MajorCategory $majorCategory): Response
+    public function update(UpdateRequest $request, MajorCategory $majorCategory): Response
     {
-        //$request->validate([
-        //    'name' => 'required|unique:major_categories',
-        //    'description' => 'required',
-        //],
-        //[
-        //    'name.required' => '親カテゴリ名は必須です。',
-        //    'name.unique' => '親カテゴリ名「' . $request->input('name') . '」は登録済みです。',
-        //    'description.required' => '親カテゴリの説明は必須です。',
-        //]);
-
         $major_category = new MajorCategory();
         $major_category->name = $request->input('name');
         $major_category->description = $request->input('description');
